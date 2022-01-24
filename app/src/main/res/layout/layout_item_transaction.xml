@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="16dp">
+
+    <TextView
+        android:id="@+id/titulo_textoLancamento_itemtransaction"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:text="@string/texto_titulo_item_transaction"
+        app:layout_constraintBottom_toTopOf="@+id/titulo_texto_tipoLancamento_itemTransaction"
+        app:layout_constraintStart_toEndOf="@+id/imagemLancamento_itemTransaction"
+        app:layout_constraintTop_toTopOf="@+id/imagemLancamento_itemTransaction"
+        app:layout_constraintVertical_chainStyle="spread_inside" />
+
+    <ImageView
+        android:id="@+id/imagemLancamento_itemTransaction"
+        android:layout_width="56dp"
+        android:layout_height="56dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_launcher_background"
+        tools:ignore="ContentDescription" />
+
+    <TextView
+        android:id="@+id/titulo_texto_tipoLancamento_itemTransaction"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:text="@string/texto_subtitulo_item_transaction"
+        app:layout_constraintBottom_toBottomOf="@+id/imagemLancamento_itemTransaction"
+        app:layout_constraintStart_toEndOf="@+id/imagemLancamento_itemTransaction"
+        app:layout_constraintTop_toBottomOf="@+id/titulo_textoLancamento_itemtransaction" />
+
+    <TextView
+        android:id="@+id/campo_valorLancamento_itemTransaction"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:text="@string/texto_campo_valor_item"
+        app:layout_constraintEnd_toStartOf="@+id/guideline_vertical_end_itemTransaction"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_vertical_end_itemTransaction"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        app:layout_constraintGuide_end="16dp" />
+</androidx.constraintlayout.widget.ConstraintLayout>

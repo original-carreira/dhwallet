@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".fragmentos.Fragmento_TelaSendMoney">
+
+    <View
+        android:id="@+id/view_sendmoney"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:background="@drawable/background_card_top"
+        app:layout_constraintBottom_toTopOf="@id/guideline_horizontal_sendmoney"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar_sendmoney"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:title="@string/texto_titulo_transfer"
+        app:titleTextColor="@color/white">
+
+        <ImageView
+            android:id="@+id/foto_toolbar_sendmoney"
+            android:layout_width="28dp"
+            android:layout_height="28dp"
+            android:layout_gravity="end"
+            android:layout_marginEnd="16dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/foto"
+            tools:ignore="ContentDescription"/>
+
+        <ImageView
+            android:id="@+id/imagem_voltar_sendmoney"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            android:layout_marginEnd="30dp"
+            android:src="@drawable/ic_arrow_backward"
+            tools:ignore="ContentDescription,RtlHardcoded"/>
+    </androidx.appcompat.widget.Toolbar>
+
+    <androidx.appcompat.widget.SearchView
+        android:id="@+id/campo_busca_sendmoney"
+        style="@style/Widget.DHWallet.SearchView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:defaultQueryHint="Busque por um contato"
+        app:layout_constraintBottom_toBottomOf="@id/guideline_horizontal_sendmoney"
+        app:layout_constraintEnd_toEndOf="@id/guideline_vertical_end_sendmoney"
+        app:layout_constraintStart_toStartOf="@id/guideline_vertical_start_sendmoney"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar_sendmoney" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_horizontal_sendmoney"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="200dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_vertical_start_sendmoney"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="16dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_vertical_end_sendmoney"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        app:layout_constraintGuide_end="16dp" />
+
+    <TextView
+        android:id="@+id/titulo_contato_sendmoney"
+        style="@style/Subtitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="31dp"
+        android:text="@string/texto_contatos"
+        app:layout_constraintStart_toStartOf="@id/guideline_vertical_start_sendmoney"
+        app:layout_constraintTop_toBottomOf="@id/guideline_horizontal_sendmoney" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycler_layout_sendmoney"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="32dp"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/titulo_contato_sendmoney"
+        tools:itemCount="10"
+        tools:listitem="@layout/layout_item_contato"/>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".fragmentos.Fragmento_CardInfo">
+
+    <View
+        android:id="@+id/view_card_info"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:background="@drawable/background_card_top"
+        app:layout_constraintBottom_toTopOf="@id/guideline_horizontal_cardinfo" />
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar_cardinfo"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:navigationIcon="@drawable/ic_arrow_backward">
+
+        <ImageView
+            android:layout_width="28dp"
+            android:layout_height="28dp"
+            android:layout_gravity="end"
+            android:layout_marginEnd="16dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/foto"
+            tools:ignore="ContentDescription" />
+    </androidx.appcompat.widget.Toolbar>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_horizontal_cardinfo"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="223dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_vertical_start_cardinfo"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="16dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_vertical_end_cardinfo"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        app:layout_constraintGuide_end="16dp" />
+
+    <TextView
+        android:id="@+id/titulo_texto_limite"
+        style="@style/Subtitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="18dp"
+        android:text="@string/limite"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@id/guideline_vertical_start_cardinfo"
+        app:layout_constraintTop_toBottomOf="@id/toolbar_cardinfo" />
+
+    <TextView
+        android:id="@+id/campo_valor_limite"
+        style="@style/Subtitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/valorentrada"
+        android:textColor="@color/white"
+        android:textSize="33sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@id/guideline_vertical_start_cardinfo"
+        app:layout_constraintTop_toBottomOf="@id/titulo_texto_limite" />
+
+    <TextView
+        android:id="@+id/subtitulo_numerocard_1"
+        style="@style/Subtitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="22dp"
+        android:text="@string/asteristicos_text"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="@id/guideline_vertical_start_cardinfo"
+        app:layout_constraintTop_toBottomOf="@id/campo_valor_limite" />
+
+    <TextView
+        android:id="@+id/subtitulo_numerocard_2"
+        style="@style/Subtitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="35dp"
+        android:layout_marginTop="22dp"
+        android:text="@string/asteristicos_text"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        app:layout_constraintStart_toEndOf="@id/subtitulo_numerocard_1"
+        app:layout_constraintTop_toBottomOf="@id/campo_valor_limite" />
+
+    <TextView
+        android:id="@+id/subtitulo_numerocard_3"
+        style="@style/Subtitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="35dp"
+        android:layout_marginTop="22dp"
+        android:text="@string/asteristicos_text"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        app:layout_constraintStart_toEndOf="@id/subtitulo_numerocard_2"
+        app:layout_constraintTop_toBottomOf="@id/campo_valor_limite" />
+
+    <TextView
+        android:id="@+id/subtitulo_numerocard_4"
+        style="@style/Subtitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="35dp"
+        android:layout_marginTop="22dp"
+        android:text="@string/data_exemplo"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        app:layout_constraintStart_toEndOf="@id/subtitulo_numerocard_3"
+        app:layout_constraintTop_toBottomOf="@id/campo_valor_limite" />
+
+    <TextView
+        android:id="@+id/titulo_texto_servico_cardinfo"
+        style="@style/Subtitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="31dp"
+        android:text="@string/texto_servico"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@id/guideline_vertical_start_cardinfo"
+        app:layout_constraintTop_toBottomOf="@id/guideline_horizontal_cardinfo" />
+
+    <ImageView
+        android:id="@+id/icon_nagigation_cardinfo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:src="@drawable/ic_arrow_up_24"
+        app:layout_constraintStart_toStartOf="@id/guideline_vertical_start_cardinfo"
+        app:layout_constraintTop_toBottomOf="@id/titulo_texto_servico_cardinfo"
+        tools:ignore="ContentDescription" />
+
+    <ImageView
+        android:id="@+id/icon_bolt_cardinfo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="16dp"
+        android:src="@drawable/ic_bolt_24"
+        app:layout_constraintStart_toStartOf="@id/icon_nagigation_cardinfo"
+        app:layout_constraintTop_toBottomOf="@id/titulo_texto_servico_cardinfo"
+        tools:ignore="ContentDescription" />
+
+    <ImageView
+        android:id="@+id/icon_money_cardinfo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="16dp"
+        android:src="@drawable/ic_money_24"
+        app:layout_constraintStart_toStartOf="@id/icon_bolt_cardinfo"
+        app:layout_constraintTop_toBottomOf="@id/titulo_texto_servico_cardinfo"
+        tools:ignore="ContentDescription" />
+
+    <TextView
+        android:id="@+id/titulo_texto_ofertas_cardinfo"
+        style="@style/Subtitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="17dp"
+        android:text="@string/texto_ofertas"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@id/guideline_vertical_start_cardinfo"
+        app:layout_constraintTop_toBottomOf="@+id/icon_nagigation_cardinfo" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycler_card_info"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="31dp"
+        app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+        app:layout_constraintTop_toBottomOf="@+id/titulo_texto_ofertas_cardinfo"
+        tools:itemCount="2" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
