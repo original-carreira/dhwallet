@@ -39,7 +39,7 @@ class Fragmento_TelaSendMoney : Fragment(R.layout.fragment_fragmento__tela_send_
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         // Inflate the layout for this fragment
         _binding = FragmentFragmentoTelaSendMoneyBinding.inflate(inflater,container,false)
         return binding.root
@@ -51,7 +51,7 @@ class Fragmento_TelaSendMoney : Fragment(R.layout.fragment_fragmento__tela_send_
         binding.imagemVoltarSendmoney.setOnClickListener {
             parentFragmentManager.beginTransaction()
                 .replace(R.id.conteiner_fragment_mainactivit,FragmentoTela_Home_transaction())
-                .addToBackStack(null)
+                .addToBackStack("Fragmento_TelaSendMoney")
                 .commit()
         }
     }
@@ -68,14 +68,6 @@ class Fragmento_TelaSendMoney : Fragment(R.layout.fragment_fragmento__tela_send_
     }
 
     companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment Fragmento_TelaSendMoney.
-         */
 
         @JvmStatic
         fun newInstance(paramEntrada: String, paramSaida: String) =

@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".fragmentos.Fragmento_Home">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar_home"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:title="DH WALLET"
+        app:titleMarginStart="136dp">
+
+        <ImageView
+            android:id="@+id/foto_toolbar_home"
+            android:layout_width="28dp"
+            android:layout_height="28dp"
+            android:layout_gravity="end"
+            android:layout_marginEnd="16dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/foto"
+            tools:ignore="ContentDescription" />
+
+    </androidx.appcompat.widget.Toolbar>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_horizontal_home"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="260dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_vertical_start_home"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="16dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_vertical_end_home"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        app:layout_constraintGuide_end="16dp" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycler_home"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+        app:layout_constraintBottom_toTopOf="@+id/guideline_horizontal_home"
+        app:layout_constraintEnd_toStartOf="@+id/guideline_vertical_end_home"
+        app:layout_constraintStart_toEndOf="@+id/guideline_vertical_start_home"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar_home"
+        tools:ignore="SpeakableTextPresentCheck"
+        tools:itemCount="3"
+        tools:listitem="@layout/layout_item_card_info" />
+
+    <TextView
+        android:id="@+id/titulo_texto_transacoes_home"
+        style="@style/Subtitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="45dp"
+        android:text="@string/transacoes"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/guideline_vertical_start_home"
+        app:layout_constraintTop_toTopOf="@+id/guideline_horizontal_home" />
+
+    <ImageView
+        android:id="@+id/icone_avancar_home"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="45dp"
+        android:src="@drawable/ic_arrow_forward"
+        app:layout_constraintEnd_toStartOf="@+id/guideline_vertical_end_home"
+        app:layout_constraintTop_toBottomOf="@+id/guideline_horizontal_home"
+        tools:ignore="ContentDescription" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycler2_home"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="21dp"
+        android:orientation="vertical"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_constraintEnd_toStartOf="@+id/guideline_vertical_end_home"
+        app:layout_constraintStart_toEndOf="@+id/guideline_vertical_start_home"
+        app:layout_constraintTop_toBottomOf="@+id/titulo_texto_transacoes_home"
+        tools:itemCount="4"
+        tools:listitem="@layout/layout_item_transaction" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

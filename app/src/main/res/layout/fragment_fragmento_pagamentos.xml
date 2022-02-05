@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".fragmentos.Fragmento_pagamentos">
+
+    <View
+        android:id="@+id/view_pagamentos"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:background="@drawable/background_card_top"
+        app:layout_constraintBottom_toTopOf="@id/guideline_horizontal_pagamentos"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar_pagamento"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:title="@string/pagamentos"
+        app:titleTextColor="@color/white">
+
+        <ImageView
+            android:id="@+id/foto_toolbar_sendmoney"
+            android:layout_width="28dp"
+            android:layout_height="28dp"
+            android:layout_gravity="end"
+            android:layout_marginEnd="16dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/foto"
+            tools:ignore="ContentDescription" />
+
+        <ImageView
+            android:id="@+id/imagem_voltar_pagamento"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            android:layout_marginEnd="30dp"
+            android:src="@drawable/ic_arrow_backward"
+            tools:ignore="ContentDescription,RtlHardcoded" />
+    </androidx.appcompat.widget.Toolbar>
+
+    <androidx.appcompat.widget.SearchView
+        android:id="@+id/campo_busca_pagamentos"
+        style="@style/Widget.DHWallet.SearchView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:defaultQueryHint="Busque por um contato"
+        app:layout_constraintBottom_toBottomOf="@id/guideline_horizontal_pagamentos"
+        app:layout_constraintEnd_toEndOf="@id/guideline_vertical_end_pagamentos"
+        app:layout_constraintStart_toStartOf="@id/guideline_vertical_start_pagamentos"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar_pagamento" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_horizontal_pagamentos"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="200dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_vertical_start_pagamentos"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="16dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_vertical_end_pagamentos"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        app:layout_constraintGuide_end="16dp" />
+
+    <TextView
+        android:id="@+id/titulo_usados_pagamentos"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="135dp"
+        android:text="@string/texto_titulo_usados"
+        app:layout_constraintStart_toStartOf="@+id/guideline_vertical_start_pagamentos"
+        app:layout_constraintTop_toBottomOf="@id/guideline_horizontal_pagamentos" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycler_layout_pagamentos"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginBottom="16dp"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/titulo_usados_pagamentos"
+        tools:itemCount="8"
+        tools:listitem="@layout/layout_item_pagamento" />
+
+    <ImageView
+        android:id="@+id/imagem_eletric"
+        android:layout_width="61dp"
+        android:layout_height="61dp"
+        android:layout_marginTop="28dp"
+        android:src="@mipmap/ic_eletricity"
+        app:layout_constraintEnd_toStartOf="@+id/imagem_water"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/view_pagamentos"
+        tools:ignore="ContentDescription" />
+
+    <ImageView
+        android:id="@+id/imagem_water"
+        android:layout_width="61dp"
+        android:layout_height="61dp"
+        android:src="@mipmap/ic_service_water"
+        app:layout_constraintBottom_toBottomOf="@+id/imagem_eletric"
+        app:layout_constraintEnd_toStartOf="@+id/imagem_internet"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/imagem_eletric"
+        app:layout_constraintTop_toTopOf="@+id/imagem_eletric"
+        tools:ignore="ContentDescription" />
+
+    <ImageView
+        android:id="@+id/imagem_internet"
+        android:layout_width="61dp"
+        android:layout_height="61dp"
+        android:src="@mipmap/ic_internet"
+        app:layout_constraintBottom_toBottomOf="@+id/imagem_water"
+        app:layout_constraintEnd_toStartOf="@+id/imagem_pagamento"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/imagem_water"
+        app:layout_constraintTop_toTopOf="@+id/imagem_water"
+        tools:ignore="ContentDescription" />
+
+    <ImageView
+        android:id="@+id/imagem_pagamento"
+        android:layout_width="61dp"
+        android:layout_height="61dp"
+        android:src="@mipmap/ic_pagamento"
+        app:layout_constraintBottom_toBottomOf="@+id/imagem_internet"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/guideline_vertical_end_pagamentos"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/imagem_internet"
+        app:layout_constraintTop_toTopOf="@+id/imagem_internet"
+        tools:ignore="ContentDescription" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

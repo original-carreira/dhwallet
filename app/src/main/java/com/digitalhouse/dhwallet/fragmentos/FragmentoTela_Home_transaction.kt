@@ -38,7 +38,7 @@ class FragmentoTela_Home_transaction : Fragment(R.layout.fragment_fragmento_tela
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         // Inflate the layout for this fragment
         _binding = FragmentFragmentoTelaHomeTransactionBinding.inflate(inflater,container,false)
         return binding.root
@@ -59,6 +59,14 @@ class FragmentoTela_Home_transaction : Fragment(R.layout.fragment_fragmento_tela
             transaction.addToBackStack(null)
             transaction.commit()
         }
+        binding.imagemVoltarHomeTransactionToolbar.setOnClickListener {
+            parentFragmentManager.beginTransaction().apply {
+                replace(R.id.conteiner_fragment_mainactivit,Fragmento_CardInfo())
+                setReorderingAllowed(true)
+                addToBackStack("FragmentoTela_Home_transaction")
+                commit()
+            }
+        }
     }
 
     override fun onDestroy() {
@@ -73,14 +81,6 @@ class FragmentoTela_Home_transaction : Fragment(R.layout.fragment_fragmento_tela
     }
 
     companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment FragmentoTela_Home_transaction.
-         */
 
         @JvmStatic
         fun newInstance(paramEntrada: String, paramSaida: String) =

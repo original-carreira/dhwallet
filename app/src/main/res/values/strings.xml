@@ -35,4 +35,10 @@
     <string name="texto_subtitulo_item_transaction">Tipo do Lançamento</string>
     <string name="texto_campo_valor_item">Valor</string>
     <string name="texto_ofertas">Ofertas</string>
+    <string name="descontos">Descontos</string>
+    <string name="transacoes">Transações</string>
+    <string name="nome_card">Nome e sobrenome</string>
+    <string name="pagamentos">PAGAMENTOS</string>
+    <string name="texto_titulo_usados">Mais Usados</string>
+    <string name="date_vencimento">09/24</string>
 </resources>

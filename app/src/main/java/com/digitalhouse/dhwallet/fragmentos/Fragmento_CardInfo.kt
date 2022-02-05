@@ -5,56 +5,75 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.recyclerview.widget.ConcatAdapter
 import com.digitalhouse.dhwallet.R
+import com.digitalhouse.dhwallet.adaptadores.AdapterCardInfo
+import com.digitalhouse.dhwallet.adaptadores.AdapterCardInfo_2
+import com.digitalhouse.dhwallet.databinding.FragmentFragmentoCardInfoBinding
+import com.digitalhouse.dhwallet.databinding.LayoutItem2CardInfoBinding
+import com.digitalhouse.dhwallet.model.listaCardInfo
+import com.digitalhouse.dhwallet.model.listaOfertas
 
 
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
-
-/**
- * A simple [Fragment] subclass.
- * Use the [Fragmento_CardInfo.newInstance] factory method to
- * create an instance of this fragment.
- */
-class Fragmento_CardInfo : Fragment() {
-
-    private var param1: String? = null
-    private var param2: String? = null
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
-        }
-    }
+class Fragmento_CardInfo : Fragment(R.layout.fragment_fragmento__card_info) {
+    private var _binding: FragmentFragmentoCardInfoBinding? = null
+    private val binding get() = _binding!!
+    private lateinit var adaptercardinfo2: AdapterCardInfo_2
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_fragmento__card_info, container, false)
+    ): View {
+        _binding = FragmentFragmentoCardInfoBinding.inflate(inflater,container,false)
+        return binding.root
     }
 
-    companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment Fragmento_CardInfo.
-         */
-        
-        @JvmStatic
-        fun newInstance(param1: String, param2: String) =
-            Fragmento_CardInfo().apply {
-                arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
-                }
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        initRecyclerView()
+        binding.iconNagigationCardinfo.setOnClickListener {
+            parentFragmentManager.beginTransaction().apply {
+                replace(R.id.conteiner_fragment_mainactivit,FragmentoTela_Home_transaction())
+                setReorderingAllowed(true)
+                addToBackStack("Fragmento_CardInfo")
+                commit()
             }
+        }
+        binding.iconBoltCardinfo.setOnClickListener {
+            parentFragmentManager.beginTransaction().apply {
+                replace(R.id.conteiner_fragment_mainactivit,Fragmento_TelaSendMoney())
+                setReorderingAllowed(true)
+                addToBackStack("Fragmento_CardInfo")
+                commit()
+            }
+        }
+        binding.imagemVoltarCardinfoToolbar.setOnClickListener {
+            parentFragmentManager.beginTransaction().apply {
+                replace(R.id.conteiner_fragment_mainactivit,Fragmento_Home())
+                setReorderingAllowed(true)
+                addToBackStack("Fragmento_CardInfo")
+                commit()
+            }
+        }
+        binding.iconMoneyCardinfo.setOnClickListener {
+            parentFragmentManager.beginTransaction().apply {
+                replace(R.id.conteiner_fragment_mainactivit,Fragmento_pagamentos())
+                setReorderingAllowed(true)
+                addToBackStack("Fragmento_CardInfo")
+                commit()
+            }
+        }
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        _binding = null
+    }
+
+    private fun initRecyclerView(){
+       adaptercardinfo2 = AdapterCardInfo_2()
+       binding.recyclerCardInfo.adapter = ConcatAdapter(adaptercardinfo2)
+        binding.recycler2CardInfo.adapter = ConcatAdapter(adaptercardinfo2)
+       adaptercardinfo2.submitList(listaOfertas)
     }
 }

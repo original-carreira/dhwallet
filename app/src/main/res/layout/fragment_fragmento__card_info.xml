@@ -6,6 +6,8 @@
     android:layout_height="match_parent"
     tools:context=".fragmentos.Fragmento_CardInfo">
 
+
+
     <View
         android:id="@+id/view_card_info"
         android:layout_width="match_parent"
@@ -18,8 +20,7 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:navigationIcon="@drawable/ic_arrow_backward">
+        app:layout_constraintTop_toTopOf="parent">
 
         <ImageView
             android:layout_width="28dp"
@@ -29,6 +30,15 @@
             android:scaleType="centerCrop"
             android:src="@drawable/foto"
             tools:ignore="ContentDescription" />
+
+        <ImageView
+            android:id="@+id/imagem_voltar_cardinfo_toolbar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            android:layout_marginEnd="30dp"
+            android:src="@drawable/ic_arrow_backward"
+            tools:ignore="ContentDescription,RtlHardcoded" />
     </androidx.appcompat.widget.Toolbar>
 
     <androidx.constraintlayout.widget.Guideline
@@ -190,10 +200,58 @@
         android:id="@+id/recycler_card_info"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="31dp"
+        android:layout_marginTop="21dp"
+        android:orientation="horizontal"
         app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
         app:layout_constraintTop_toBottomOf="@+id/titulo_texto_ofertas_cardinfo"
-        tools:itemCount="2" />
+        tools:itemCount="2"
+        tools:listitem="@layout/layout_item2_card_info" />
+
+    <ImageView
+        android:id="@+id/imagem_avancar_cardinfo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="110dp"
+        android:src="@drawable/ic_arrow_forward"
+        app:layout_constraintEnd_toStartOf="@+id/guideline_vertical_end_cardinfo"
+        app:layout_constraintTop_toBottomOf="@+id/guideline_horizontal_cardinfo"
+        tools:ignore="ContentDescription" />
+
+    <TextView
+        android:id="@+id/titulo_texto_descontos_cardinfo"
+        style="@style/Subtitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:text="@string/descontos"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@+id/guideline_vertical_start_cardinfo"
+        app:layout_constraintTop_toBottomOf="@+id/recycler_card_info" />
+
+    <ImageView
+        android:id="@+id/imagem2_avancar_cardinfo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="300dp"
+        android:layout_marginEnd="8dp"
+        android:src="@drawable/ic_arrow_forward"
+        app:layout_constraintEnd_toStartOf="@+id/guideline_vertical_end_cardinfo"
+        app:layout_constraintTop_toBottomOf="@+id/guideline_horizontal_cardinfo"
+        tools:ignore="ContentDescription" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycler2_card_info"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="21dp"
+        android:orientation="horizontal"
+        app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+        app:layout_constraintStart_toEndOf="@+id/guideline_vertical_start_cardinfo"
+        app:layout_constraintTop_toBottomOf="@+id/titulo_texto_descontos_cardinfo"
+        tools:itemCount="2"
+        tools:listitem="@layout/layout_item2_card_info"/>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
